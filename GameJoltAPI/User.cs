@@ -6,10 +6,10 @@ using System.Text;
 namespace GameJoltAPI
 {
     /// <summary>
-    /// Class representing the User API callback information.
-    /// See: http://gamejolt.com/api/doc/game/users/fetch/ for further information.
-    /// @author Christian "HyperGod" Bosence
-    /// @version 0.1.0.0
+    /// <para>Class representing the User API callback information.</para>
+    /// <para>See: http://gamejolt.com/api/doc/game/users/fetch/ for further information.</para>
+    /// <para>@author Christian "HyperGod" Bosence</para>
+    /// <para>@version 0.1.0.0</para>
     /// </summary>
     public class User
     {
@@ -130,8 +130,8 @@ namespace GameJoltAPI
         }
 
         /// <summary>
-        /// Get or set the users developer_name. Returns null if it isn't set.
-        /// Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.
+        /// <para>Get or set the users developer_name. Returns null if it isn't set.</para>
+        /// <para>Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.</para>
         /// </summary>
         public string developer_name
         {
@@ -149,8 +149,8 @@ namespace GameJoltAPI
         }
 
         /// <summary>
-        /// Get or set the developers website. Returns null if it isn't set.
-        /// Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.
+        /// <para>Get or set the developers website. Returns null if it isn't set.</para>
+        /// <para>Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.</para>
         /// </summary>
         public string developer_website
         {
@@ -169,8 +169,8 @@ namespace GameJoltAPI
         }
 
         /// <summary>
-        /// Get or set the developers description. Returns null if it isn't set.
-        /// Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.
+        /// <para>Get or set the developers description. Returns null if it isn't set.</para>
+        /// <para>Throws a UserNotDeveloper exception if the user doesn't have the sufficent Usertype.</para>
         /// </summary>
         public string developer_description
         {
