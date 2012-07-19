@@ -5,10 +5,16 @@ using System.Text;
 
 namespace GameJoltAPI
 {
+    /// <summary>
+    /// <para>Class representing the Score API callback information.</para>
+    /// <para>See: http://gamejolt.com/api/doc/game/scores/fetch/ for further information.</para>
+    /// <para>@author Christian "HyperGod" Bosence</para>
+    /// <para>@version 0.1.0.0</para>
+    /// </summary>
     public class Score
     {
         private int Sort;
-        private string Score;
+        private string value;
         private string Extra_data;
         private string User;
         private int userid;
@@ -28,7 +34,7 @@ namespace GameJoltAPI
         public Score(int sort, string score = null, string extra_data = null, string user = null, int? user_id = null, string guest = null, string stored = null)
         {
             this.Sort = sort;
-            this.Score = score;
+            this.value = score;
             this.Extra_data = extra_data;
             this.User = user;
             if (user_id.HasValue) { this.userid = user_id.Value; }
@@ -50,8 +56,8 @@ namespace GameJoltAPI
         /// </summary>
         public string score
         {
-            get { return Score; }
-            set { Score = value; }
+            get { return value; }
+            set { this.value = value; }
         }
 
         /// <summary>
@@ -106,6 +112,71 @@ namespace GameJoltAPI
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+    }
+
+    /// <summary>
+    /// <para>Class representing the scoretable API callback information.</para>
+    /// <para>See: http://gamejolt.com/api/doc/game/scores/fetch/ for further information.</para>
+    /// <para>@author Christian "HyperGod" Bosence</para>
+    /// <para>@version 0.1.0.0</para>
+    /// </summary>
+    public class ScoreTable
+    {
+        private int ID;
+        private string Name;
+        private string Description;
+        private bool Primary;
+        
+        /// <summary>
+        /// Creates a new GameJoltAPI scoretable instance. Represents the callback information.
+        /// </summary>
+        /// <param name="id">The high score table identifier.</param>
+        /// <param name="name">The developer-defined high score table name.</param>
+        /// <param name="description">The developer-defined high score table description.</param>
+        /// <param name="primary">Whether or not this is the default high score table. High scores are submitted to the primary table by default.</param>
+        public ScoreTable(int id, string name = null, string description = null, bool primary = true)
+        {
+            this.ID = id;
+            this.Name = name;
+            this.Description = description;
+            this.Primary = primary;
+        }
+
+        /// <summary>
+        /// The high score table identifier. Returns null if it isn't set.
+        /// </summary>
+        public int id
+        {
+            get { return ID; }
+            set { ID = value; }
+        }
+
+        /// <summary>
+        /// The developer-defined high score table name. Returns null if it isn't set.
+        /// </summary>
+        public string name
+        {
+            get { return Name; }
+            set { Name = value; }
+        }
+
+        /// <summary>
+        /// The developer-defined high score table description. Returns null if it isn't set.
+        /// </summary>
+        public string description
+        {
+            get { return Description; }
+            set { Description = value; }
+        }
+
+        /// <summary>
+        /// Whether or not this is the default high score table. High scores are submitted to the primary table by default. Returns null if it isn't set.
+        /// </summary>
+        public bool primary
+        {
+            get { return Primary; }
+            set { Primary = value; }
         }
     }
 }

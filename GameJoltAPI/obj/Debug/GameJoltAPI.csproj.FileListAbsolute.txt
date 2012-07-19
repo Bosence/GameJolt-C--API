@@ -1,0 +1,5 @@
+C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAPI.dll
+C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAPI.pdb
+C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.dll
+C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.pdb

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameJoltAPI
 {
-    enum SessionStatus
+    public enum SessionStatus
     {
         Active,
         Idle

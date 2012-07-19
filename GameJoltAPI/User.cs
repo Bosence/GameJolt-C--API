@@ -16,11 +16,11 @@ namespace GameJoltAPI
         /// <summary>
         /// Enum collection of possible account types.
         /// </summary>
-        public static enum UserType { User, Developer, Moderator, Administrator };
+        public enum UserType { User, Developer, Moderator, Administrator };
         /// <summary>
         /// Enum collection of possible account statuses.
         /// </summary>
-        public static enum UserStatus { Active, Banned };
+        public enum UserStatus { Active, Banned };
 
         /* Formating is off, because I've used the API naming schema for the encaps. */
         private int id;

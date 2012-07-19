@@ -12,7 +12,7 @@ namespace GameJoltAPI
     /// @author Samuel Wronski
     /// @version 0.1.0.0
     /// </summary>
-    interface IGamejoltController
+    public interface IGamejoltController
     {
         #region Trophies
         /// <summary>
@@ -23,7 +23,7 @@ namespace GameJoltAPI
         /// <param name="token">the user's token</param>
         /// <param name="trophyID">The ID of the trophy to add for the user</param>
         /// <param name="callback">the callback function</param>
-        public void AwardTrophy(int gameid, string username, string token, int trophyID, AsyncCallback callback);
+        void AwardTrophy(int gameid, string username, string token, int trophyID, AsyncCallback callback);
         /// <summary>
         /// Returns either one trophy or multiple trophies, depending on the parameters passed in.
         /// </summary>
@@ -37,7 +37,7 @@ namespace GameJoltAPI
         /// Passing a trophy_id or a set of trophy_ids will ignore the "achieved" parameter if it is passed.
         /// </param>
         /// <param name="callback">The callback function</param>
-        public void FetchTrophy(int gameid, string username, string token, bool? achieved = null, int? trophyID = null, AsyncCallback callback);
+        void FetchTrophy(int gameid, string username, string token, AsyncCallback callback, bool? achieved = null, int? trophyID = null);
         #endregion
 
         #region Users
@@ -48,7 +48,7 @@ namespace GameJoltAPI
         /// <param name="username">The Username of the user</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">the callback function</param>
-        public void AuthenticateUser(int gameid, string username, string token, AsyncCallback callback);
+        void AuthenticateUser(int gameid, string username, string token, AsyncCallback callback);
         /// <summary>
         /// Fetches a user based on either their User ID or Username.
         /// If neither a User ID or Username is provided an exception should be thrown.
@@ -57,7 +57,7 @@ namespace GameJoltAPI
         /// <param name="userid">The User ID of the user to fetch.</param>
         /// <param name="username">Username of user to fetch.</param>
         /// <param name="callback">The callback function</param>
-        public void FetchUser(int gameid, int? userid = null, string? username = null, AsyncCallback callback);
+        void FetchUser(int gameid, AsyncCallback callback, int? userid = null, string username = null);
         #endregion
 
         #region Sessions
@@ -71,7 +71,7 @@ namespace GameJoltAPI
         /// <param name="username">the username of the user</param>
         /// <param name="token">the user's token</param>
         /// <param name="callback">the callback function</param>
-        public void OpenSession(int gameid, string username, string token, AsyncCallback callback);
+        void OpenSession(int gameid, string username, string token, AsyncCallback callback);
         /// <summary>
         /// Pings an open session to tell the system that it's still active. If the session hasn't been pinged within 120 seconds, 
         /// the system will close the session and you will have to open another one. It's recommended that you ping every 30 seconds 
@@ -83,7 +83,7 @@ namespace GameJoltAPI
         /// <param name="token">The user's token</param>
         /// <param name="status">The user's status. The session starts in an Active state.</param>
         /// <param name="callback">The callback function</param>
-        public void PingSession(int gameid, string username, string token, SessionStatus? status, AsyncCallback callback);
+        void PingSession(int gameid, string username, string token, SessionStatus? status, AsyncCallback callback);
         /// <summary>
         /// Close the active session.
         /// </summary>
@@ -91,7 +91,7 @@ namespace GameJoltAPI
         /// <param name="username">The username of the user</param>
         /// <param name="token">The User's token</param>
         /// <param name="callback">the callback function</param>
-        public void CloseSession(int gameid, string username, string token, AsyncCallback callback);
+        void CloseSession(int gameid, string username, string token, AsyncCallback callback);
         #endregion
 
         #region Scores
@@ -104,7 +104,7 @@ namespace GameJoltAPI
         /// <param name="limit">the number of scores to return. Default 10. Attempting to return a negative number of scores or more than 100 will result in an Exception</param>
         /// <param name="tableid">The id of the high score table to fetch from. If left blank the primary table will be used.</param>
         /// <param name="callback">The callback function</param>
-        public void FetchScore(int gameid, string? username = null, string? token = null, int? limit = null, int? tableid = null, AsyncCallback callback);
+        void FetchScore(int gameid, AsyncCallback callback, string username = null, string token = null, int? limit = null, int? tableid = null);
         /// <summary>
         /// Adds a score for a user or guest.
         /// </summary>
@@ -120,29 +120,16 @@ namespace GameJoltAPI
         /// <param name="meta">If there's any extra data you want to store, this is where it should go. If will not be shown outside of the API.</param>
         /// <param name="tableid">The id of the high score table to submit the score to. If left blank the primary table will be used.</param>
         /// <param name="callback">the callback function</param>
-        public void AddScore(int gameid, string score, int sort, string username, string? token = null, string? meta = null, int? tableid = null, AsyncCallback callback);
+        void AddScore(int gameid, string score, int sort, string username, AsyncCallback callback, string token = null, string meta = null, int? tableid = null);
         /// <summary>
         /// Retruns a last of high score tables for the game
         /// </summary>
         /// <param name="gameid">The ID of the game</param>
         /// <param name="callback">The callback function</param>
-        public void ScoreTables(int gameid, AsyncCallback callback);
+        void ScoreTables(int gameid, AsyncCallback callback);
         #endregion
 
         #region Data Store
-        /// <summary>
-        /// The Different Data opperations that may be performed by the UpdateData function.
-        /// </summary>
-        public enum DataOperation
-        {
-            Add,
-            Subtract,
-            Multiply,
-            Divide,
-            Append,
-            Prepend
-        }
-
         /// <summary>
         /// Returns data from the Data Store
         /// </summary>
@@ -151,7 +138,7 @@ namespace GameJoltAPI
         /// <param name="username">The user's username</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">The callback function</param>
-        public void FetchData(int gameid, string key, string? username = null, string? token = null, AsyncCallback callback);
+        void FetchData(int gameid, string key, AsyncCallback callback, string username = null, string token = null);
         /// <summary>
         /// Sets data in the Data Store
         /// </summary>
@@ -161,7 +148,7 @@ namespace GameJoltAPI
         /// <param name="username">The user's username</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">The callback function</param>
-        public void SetData(int gameid, string key, string data, string? username = null, string? token = null, AsyncCallback callback);
+        void SetData(int gameid, string key, string data, AsyncCallback callback, string username = null, string token = null);
         /// <summary>
         /// Updates data in the DataStore
         /// </summary>
@@ -172,7 +159,7 @@ namespace GameJoltAPI
         /// <param name="username">The user's username</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">The callback function</param>
-        public void UpdateData(int gameid, string key, DataOperation operation, string value, string? username = null, string? token = null, AsyncCallback callback);
+        void UpdateData(int gameid, string key, DataOperation operation, string value, AsyncCallback callback, string username = null, string token = null);
         /// <summary>
         /// Removes data from the Data Store.
         /// </summary>
@@ -181,7 +168,7 @@ namespace GameJoltAPI
         /// <param name="username">The user's name</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">The callback function</param>
-        public void RemoveData(int gameid, string key, string? username = null, string? token = null, AsyncCallback callback);
+        void RemoveData(int gameid, string key, AsyncCallback callback, string username = null, string token = null);
         /// <summary>
         /// Returns all the keys in either the game's global data store, or all the keys in a user's data store.
         /// </summary>
@@ -189,7 +176,20 @@ namespace GameJoltAPI
         /// <param name="username">The user's username</param>
         /// <param name="token">The user's token</param>
         /// <param name="callback">The callback function</param>
-        public void GetKeys(int gameid, string? username = null, string? token = null, AsyncCallback callback);
+        void GetKeys(int gameid, AsyncCallback callback, string username = null, string token = null);
         #endregion
+    }
+
+    /// <summary>
+    /// The Different Data opperations that may be performed by the UpdateData function.
+    /// </summary>
+    public enum DataOperation
+    {
+        Add,
+        Subtract,
+        Multiply,
+        Divide,
+        Append,
+        Prepend
     }
 }

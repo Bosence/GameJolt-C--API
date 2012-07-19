@@ -16,7 +16,7 @@ namespace GameJoltAPI
         /// <summary>
         /// Enum collection of possible difficulty levels.
         /// </summary>
-        public static enum TrophyDifficulty { Bronze, Silver, Gold, Platinum };
+        public enum TrophyDifficulty { Bronze, Silver, Gold, Platinum };
 
         private int id;
         private string Title;
