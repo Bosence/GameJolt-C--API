@@ -18,7 +18,7 @@ namespace GameJoltAPI.Helpers
     {
         /// <summary>
         /// <para>Returns an object representing the data. Stripped success line.</para>
-        /// <para>Thows a DumpFormatFailReturned exception on failure.</para>
+        /// <para>Throws a APIFailReturned exception on failure.</para>
         /// </summary>
         /// <param name="completeUrl">The complete URL, including tokens/ids that may be required.</param>
         /// <returns></returns>
@@ -36,7 +36,7 @@ namespace GameJoltAPI.Helpers
             }
             else
             {
-                throw new DumpFormatFailReturned(sr.ReadLine());
+                throw new APIFailReturned(sr.ReadLine());
             }
         }
     }

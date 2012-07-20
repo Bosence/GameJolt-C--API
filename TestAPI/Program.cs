@@ -17,7 +17,7 @@ namespace TestAPI
             {
                 Console.WriteLine(Dump.getData("http://gamejolt.com/api/game/v1/data-store/?format=dump"));
             }
-            catch (DumpFormatFailReturned e)
+            catch (APIFailReturned e)
             {
                 Console.WriteLine(e.ToString());
             }

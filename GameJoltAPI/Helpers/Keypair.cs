@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Net;
+using GameJoltAPI.Exceptions;
 
 namespace GameJoltAPI.Helpers
 {
@@ -15,7 +16,15 @@ namespace GameJoltAPI.Helpers
     /// </summary>
     public static class Keypair
     {
-        public static Dictionary<string, string> getData(string completeUrl)
+        /// <summary>
+        /// <para>Returns a Dictionary representing the keypair data.</para>
+        /// <para>Throws a APIFailReturned exception on failure.</para>
+        /// </summary>
+        /// <param name="completeUrl">The complete URL, including tokens/ids that may be required.</param>
+        /// <param name="seperator">Optional: The seperator for the key-pair information. Default is ':', recommended for GameJoltAPI.</param>
+        /// <param name="checkForSuccess">Optional: If enabled, checks for a success key, throws exception if not found. Highly recommended to remain enabled for GameJoltAPI.</param>
+        /// <returns>A dictionary representing the key pair the API returned. String for both.</returns>
+        public static Dictionary<string, string> getData(string completeUrl, char seperator = ':', bool checkForSuccess = true)
         {
             Uri u = new Uri(completeUrl);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(u);
@@ -24,26 +33,39 @@ namespace GameJoltAPI.Helpers
 
             Dictionary<string, string> temp = new Dictionary<string, string>();
             
-            /* Read the stream line by line, to parse the gamejoltapi format
-             * TODO: add success/failure checks, parsing checks
-             */
             using (StreamReader sr = new StreamReader(st))
             {
                 while (sr.Peek() >= 0)
                 {
-                    try
+                    string line = sr.ReadLine();
+
+                    if (line.Contains(seperator)) // otherwise do nothing, because it's not a key-pair
                     {
-                        string line = sr.ReadLine();
-                        temp.Add(line.Split(':')[0], line.Split(':')[1]);
-                    }
-                    catch (Exception e)
-                    {
-                        // do something
+                        string[] split = line.Split(seperator); // Slightly more optimal than doing inline, as the runtime allocates memory for each split operation.
+                        temp.Add(split[0], split[1]);
                     }
                 }
             }
 
-            return temp;
+            if (temp.ContainsKey("success") && checkForSuccess)
+            {
+                if (temp["success"] != "true")
+                {
+                    throw new APIFailReturned(temp["success"].ToString());
+                }
+                else
+                {
+                    return temp;
+                }
+            }
+            else if (!checkForSuccess)
+            {
+                return temp;
+            } 
+            else
+            {
+                throw new APIFailReturned("Information received does not contain a success key.");
+            }
         }
     }
 }
