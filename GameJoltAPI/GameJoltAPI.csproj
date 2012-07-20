@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataHandlers\Dump.cs" />
+    <Compile Include="DataHandlers\Keypair.cs" />
     <Compile Include="IGamejoltController.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="SessionStatus.cs" />
