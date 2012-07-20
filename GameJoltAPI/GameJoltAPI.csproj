@@ -40,13 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataHandlers\Dump.cs" />
-    <Compile Include="DataHandlers\Keypair.cs" />
+    <Compile Include="Exceptions\DumpFormatFailReturned.cs" />
+    <Compile Include="Exceptions\UserNotDeveloper.cs" />
+    <Compile Include="Helpers\Dump.cs" />
+    <Compile Include="Helpers\Keypair.cs" />
     <Compile Include="IGamejoltController.cs" />
-    <Compile Include="Score.cs" />
-    <Compile Include="SessionStatus.cs" />
-    <Compile Include="Trophy.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Models\Score.cs" />
+    <Compile Include="Session\SessionStatus.cs" />
+    <Compile Include="Models\Trophy.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

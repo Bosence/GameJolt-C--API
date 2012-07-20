@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameJoltAPI;
-using GameJoltAPI.DataHandlers;
+using GameJoltAPI.Exceptions;
+using GameJoltAPI.Helpers;
 
 namespace TestAPI
 {

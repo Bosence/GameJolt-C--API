@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GameJoltAPI.DataHandlers
+namespace GameJoltAPI.Helpers
 {
     /// <summary>
     /// <para>Provides a list of functions used to manipulate the keypair format the API provides.</para>

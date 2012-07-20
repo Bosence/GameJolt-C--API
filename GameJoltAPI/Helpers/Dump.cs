@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using GameJoltAPI.Exceptions;
 
-namespace GameJoltAPI.DataHandlers
+namespace GameJoltAPI.Helpers
 {
     /// <summary>
     /// <para>Provides a list of functions used to manipulate the Dump data format the API provides.</para>
@@ -38,13 +39,5 @@ namespace GameJoltAPI.DataHandlers
                 throw new DumpFormatFailReturned(sr.ReadLine());
             }
         }
-    }
-
-    /// <summary>
-    /// Custom exception, thrown for when the dumpformat returns failure.
-    /// </summary>
-    public class DumpFormatFailReturned : System.Exception
-    {
-        public DumpFormatFailReturned(string message = "Failure was returned from the DataDump. Incorrect URL?") : base(message) { }
     }
 }

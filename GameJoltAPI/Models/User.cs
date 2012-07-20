@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GameJoltAPI.Exceptions;
 
 namespace GameJoltAPI
 {
@@ -186,13 +187,5 @@ namespace GameJoltAPI
             }
             set { developerDescription = value; }
         }
-    }
-
-    /// <summary>
-    /// Custom exception, thrown when user is not developer.
-    /// </summary>
-    public class UserNotDeveloper : System.Exception
-    {
-        public UserNotDeveloper() : base("The users type does not match the developer type.") { }
     }
 }
