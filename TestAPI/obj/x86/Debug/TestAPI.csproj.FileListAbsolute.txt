@@ -6,3 +6,11 @@ C:\Users\Chris\Documents\GitHub\GameJolt-C--API\TestAPI\bin\Debug\GameJoltAPI.pd
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\TestAPI\obj\x86\Debug\TestAPI.exe
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\TestAPI\obj\x86\Debug\TestAPI.pdb
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\TestAPI\bin\Debug\TestAPI.exe.config
+D:\Development\dot Net\GameJolt-C--API\TestAPI\bin\Debug\TestAPI.exe.config
+D:\Development\dot Net\GameJolt-C--API\TestAPI\obj\x86\Debug\TestAPI.exe
+D:\Development\dot Net\GameJolt-C--API\TestAPI\obj\x86\Debug\TestAPI.pdb
+D:\Development\dot Net\GameJolt-C--API\TestAPI\bin\Debug\TestAPI.exe
+D:\Development\dot Net\GameJolt-C--API\TestAPI\bin\Debug\TestAPI.pdb
+D:\Development\dot Net\GameJolt-C--API\TestAPI\bin\Debug\GameJoltAPI.dll
+D:\Development\dot Net\GameJolt-C--API\TestAPI\bin\Debug\GameJoltAPI.pdb
+D:\Development\dot Net\GameJolt-C--API\TestAPI\obj\x86\Debug\TestAPI.csprojResolveAssemblyReference.cache

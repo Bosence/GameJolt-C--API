@@ -28,6 +28,10 @@
                     <StackPanel Width="250" Margin="6,0">
                         <TextBlock Text="Basic" FontSize="32" Foreground="LightGray"/>
                         <Grid>
+                            <TextBlock Text="Is Guest" Foreground="White"/>
+                            <TextBlock x:Name="isGuest" Text="true" Foreground="White" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid>
                             <TextBlock Text="Session Status" Foreground="White"/>
                             <TextBlock x:Name="sessionStatus" Text="inactive" Foreground="White" HorizontalAlignment="Right"/>
                         </Grid>
@@ -42,6 +46,21 @@
                         <StackPanel Margin="0,0,0,32" VerticalAlignment="Top">
                             <TextBlock Text="Data Store" FontSize="32" Foreground="LightGray"/>
                             <ItemsControl x:Name="dataList">
+
+                            </ItemsControl>
+                        </StackPanel>
+                        <Grid Height="32" VerticalAlignment="Bottom">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Width="100"/>
+                                <TextBox Width="100"/>
+                                <Button Content="Add" Width="50"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="250" Margin="6,0">
+                        <StackPanel Margin="0,0,0,32" VerticalAlignment="Top">
+                            <TextBlock Text="High Scores" FontSize="32" Foreground="LightGray"/>
+                            <ItemsControl x:Name="highscoreList">
 
                             </ItemsControl>
                         </StackPanel>

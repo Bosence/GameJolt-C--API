@@ -3,3 +3,7 @@ C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAP
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAPI.pdb
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.dll
 C:\Users\Chris\Documents\GitHub\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.pdb
+D:\Development\dot Net\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAPI.dll
+D:\Development\dot Net\GameJolt-C--API\GameJoltAPI\bin\Debug\GameJoltAPI.pdb
+D:\Development\dot Net\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.dll
+D:\Development\dot Net\GameJolt-C--API\GameJoltAPI\obj\Debug\GameJoltAPI.pdb
