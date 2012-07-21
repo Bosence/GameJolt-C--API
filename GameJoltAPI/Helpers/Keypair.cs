@@ -22,7 +22,7 @@ namespace GameJoltAPI.Helpers
         /// </summary>
         /// <param name="completeUrl">The complete URL, including tokens/ids that may be required.</param>
         /// <param name="seperator">Optional: The seperator for the key-pair information. Default is ':', recommended for GameJoltAPI.</param>
-        /// <param name="checkForSuccess">Optional: If enabled, checks for a success key, throws exception if not found. Highly recommended to remain enabled for GameJoltAPI.</param>
+        /// <param name="checkForSuccess">Optional: If enabled, checks for a 'success' key, throws exception if not found. Highly recommended to remain enabled for GameJoltAPI.</param>
         /// <returns>A dictionary representing the key pair the API returned. String for both.</returns>
         public static Dictionary<string, string> getData(string completeUrl, char seperator = ':', bool checkForSuccess = true)
         {
@@ -51,7 +51,7 @@ namespace GameJoltAPI.Helpers
             {
                 if (temp["success"] != "true")
                 {
-                    throw new APIFailReturned(temp["success"].ToString());
+                    throw new APIFailReturned(temp["message"].ToString());
                 }
                 else
                 {

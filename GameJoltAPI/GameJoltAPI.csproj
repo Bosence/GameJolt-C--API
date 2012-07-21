@@ -40,16 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\DumpFormatFailReturned.cs" />
+    <Compile Include="Exceptions\APIFailReturned.cs" />
     <Compile Include="Exceptions\UserNotDeveloper.cs" />
     <Compile Include="Helpers\Dump.cs" />
     <Compile Include="Helpers\Keypair.cs" />
     <Compile Include="IGamejoltController.cs" />
     <Compile Include="Models\Score.cs" />
-    <Compile Include="Session\SessionStatus.cs" />
+    <Compile Include="Session\Session.cs" />
     <Compile Include="Models\Trophy.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataStore\" />
+    <Folder Include="Scores\" />
+    <Folder Include="Trophies\" />
+    <Folder Include="Users\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
