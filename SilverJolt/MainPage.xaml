@@ -23,7 +23,7 @@
         </StackPanel>
         <Grid x:Name="ContentArea" Margin="0,100,0,0">
             <!--Content will go here-->
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" BorderThickness="0">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Width="250" Margin="6,0">
                         <TextBlock Text="Basic" FontSize="32" Foreground="LightGray"/>
@@ -65,11 +65,8 @@
                             </ItemsControl>
                         </StackPanel>
                         <Grid Height="32" VerticalAlignment="Bottom">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox Width="100"/>
-                                <TextBox Width="100"/>
-                                <Button Content="Add" Width="50"/>
-                            </StackPanel>
+                            <TextBox HorizontalAlignment="Stretch" Margin="0,0,50,0"/>
+                            <Button Content="Add" Width="50" HorizontalAlignment="Right"/>
                         </Grid>
                     </Grid>
                 </StackPanel>

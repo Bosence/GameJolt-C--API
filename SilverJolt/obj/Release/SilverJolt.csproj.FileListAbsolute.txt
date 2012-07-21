@@ -1,0 +1,11 @@
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJolt.dll
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJolt.pdb
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\AppManifest.xaml
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJolt.xap
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJoltTestPage.html
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\App.g.i.cs
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\MainPage.g.i.cs
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.g.resources
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.dll
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.pdb
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\XapCacheFile.xml
