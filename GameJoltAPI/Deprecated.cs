@@ -12,7 +12,7 @@ namespace GameJoltAPI
     /// @author Samuel Wronski
     /// @version 0.1.0.0
     /// </summary>
-    public interface IGamejoltController
+    public interface Deprecated
     {
         #region Trophies
         /// <summary>
