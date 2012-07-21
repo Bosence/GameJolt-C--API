@@ -47,7 +47,7 @@
     <Compile Include="Exceptions\UserNotDeveloper.cs" />
     <Compile Include="Helpers\Dump.cs" />
     <Compile Include="Helpers\Keypair.cs" />
-    <Compile Include="IGamejoltController.cs" />
+    <Compile Include="Deprecated.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Scores\Scores.cs" />
     <Compile Include="Session\Session.cs" />
