@@ -29,7 +29,7 @@ namespace GameJoltAPI
         private Session() { }
 
         /// <summary>
-        /// Used to reference the singleton class. We use this as an accessor to the methods within.
+        /// Singleton class.
         /// </summary>
         public static Session Instance
         {
@@ -53,23 +53,25 @@ namespace GameJoltAPI
         /// <summary>
         /// <para>Opens the the session. Will auto-manage, if automated isn't overriden.</para>
         /// <para>Throws an API exception if unsuccesful.</para>
+        /// <para>Don't need to set any parameters if you've set up Config.</para>
         /// </summary>
-        /// <param name="game_id"></param>
-        /// <param name="username"></param>
-        /// <param name="user_token"></param>
-        /// <param name="automated"></param>
-        public static void open(int game_id, string username, string user_token, bool automated = true)
+        /// <param name="automated">Do you want Session to set up a timer thread to automate the pinging? Defaults to true.</param>
+        /// <param name="game_id">ID of your Game. Only set if you haven't in config. Don't need to set parameter if you've set up Config.</param>
+        /// <param name="username">Username of your User. Don't need to set parameter if you've set up Config.</param>
+        /// <param name="user_token">User token of your User. Don't need to set parameter if you've set up Config.</param>
+        public static void open(bool automated = true, int? game_id = null, string username = null, string user_token = null)
         {
             /* Checks if it's succesful or not. User doesn't need the success message, so we won't supply it. */
             lock (syncRoot)
             {
-                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/open/?game_id=" + game_id.ToString() + "&username=" + username + "&user_token=" + user_token);
-                Session.game_id = game_id;
-                Session.username = username;
-                Session.user_token = user_token;
+                if (game_id.HasValue) { Session.game_id = game_id.Value; } else { Session.game_id = Config.game_id; }
+                if (username != null) { Session.username = username; } else { Session.username = Config.username; }
+                if (user_token != null) { Session.user_token = user_token; } else { Session.user_token = Config.user_token; }
                 Session.automated = automated;
 
-                if (automated)
+                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/open/?game_id=" + Session.game_id + "&username=" + Session.username + "&user_token=" + Session.user_token + "&signature=" + Config.signature);
+
+                if (Session.automated)
                 {
                     Timer pingTimer = new Timer();
                     pingTimer.Elapsed += new ElapsedEventHandler(Session.pingE);
@@ -87,7 +89,7 @@ namespace GameJoltAPI
         {
             lock (syncRoot)
             {
-                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/ping/?game_id=" + Session.game_id.ToString() + "&username=" + Session.username + "&user_token=" + Session.user_token + "&status=" + Session.status.ToString());
+                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/ping/?game_id=" + Session.game_id.ToString() + "&username=" + Session.username + "&user_token=" + Session.user_token + "&status=" + Session.status.ToString() + "&signature=" + Config.signature);
             }
         }
 
@@ -108,7 +110,7 @@ namespace GameJoltAPI
             lock (syncRoot)
             {
                 Session.pingTimer.Stop();
-                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/close/?game_id=" + Session.game_id.ToString() + "&username=" + Session.username + "&user_token=" + Session.user_token + "&status=" + Session.status.ToString());
+                Keypair.getData("http://gamejolt.com/api/game/v1/sessions/close/?game_id=" + Session.game_id.ToString() + "&username=" + Session.username + "&user_token=" + Session.user_token + "&status=" + Session.status.ToString() + "&signature=" + Config.signature);
             }
         }
 
