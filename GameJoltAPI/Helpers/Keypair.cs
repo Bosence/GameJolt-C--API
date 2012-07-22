@@ -42,6 +42,7 @@ namespace GameJoltAPI.Helpers
                     if (line.Contains(seperator)) // otherwise do nothing, because it's not a key-pair
                     {
                         string[] split = line.Split(seperator); // Slightly more optimal than doing inline, as the runtime allocates memory for each split operation.
+                        split[1] = split[1].Trim('\"'); //Trims the quotes around the value
                         temp.Add(split[0], split[1]);
                     }
                 }
