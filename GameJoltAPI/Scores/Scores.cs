@@ -26,7 +26,7 @@ namespace GameJoltAPI.Scores
 
         public Scoreboard Fetch(int? limit = null, int? tableid = null)
         {
-            string request = @"http://gamejolt.com/api/game/v1/sessions/open/?game_id=" + Config.game_id + "&signature=" + Config.signature;
+            string request = _fetchURL + "?game_id=" + Config.game_id + "&signature=" + Config.signature;
             request += "&username=" + Config.username;
             request += "&user_token=" + Config.user_token;
             if (limit != null)
@@ -34,7 +34,7 @@ namespace GameJoltAPI.Scores
             if (tableid != null)
                 request += "&table_id=" + tableid;
             //done building URL
-            Scoreboard.Fetch(request);
+            return Scoreboard.Fetch(request);
         }
     }
 }
