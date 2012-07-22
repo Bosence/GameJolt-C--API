@@ -80,7 +80,7 @@ namespace GameJoltAPI.Users
                 }
                 catch (KeyNotFoundException knfe) { devname = null; devsite = null; devdesc = null; } //If one attribute is not found, revert changes
 
-                User user = new User(id, type, usname, avatar_url, signed_up, last_login, status, devname, devsite, devdesc);
+                return new User(id, type, usname, avatar_url, signed_up, last_login, status, devname, devsite, devdesc);
             }
             catch (FormatException fe) { throw new FormatException("The user's data could not be parsed"); }
         }
