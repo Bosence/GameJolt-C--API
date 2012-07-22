@@ -1,4 +1,6 @@
-﻿<xapCache source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJolt.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="7/21/2012 9:49:11 PM">
-  <file source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.dll" archivePath="SilverJolt.dll" lastWriteTime="7/21/2012 9:49:11 PM" />
-  <file source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="7/21/2012 9:30:47 PM" />
+﻿<xapCache source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\SilverJolt.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="7/22/2012 5:06:25 PM">
+  <file source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.dll" archivePath="SilverJolt.dll" lastWriteTime="7/22/2012 5:06:24 PM" />
+  <file source="D:\Development\dot Net\GameJolt-C--API\GameJoltAPISilverlight\Bin\Release\GameJoltAPISilverlight.dll" archivePath="GameJoltAPISilverlight.dll" lastWriteTime="7/22/2012 5:06:24 PM" />
+  <file source="D:\Development\dot Net\GameJolt-C--API\GameJoltAPISilverlight\Bin\Release\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="6/8/2012 11:01:14 PM" />
+  <file source="D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="7/22/2012 5:00:56 PM" />
 </xapCache>

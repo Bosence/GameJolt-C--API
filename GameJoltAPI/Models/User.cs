@@ -7,6 +7,7 @@ using GameJoltAPI.Exceptions;
 namespace GameJoltAPI
 {
     /// <summary>
+    /// <para>DEPRICATED. Use GameJoltAPI.Users.User instead.</para>
     /// <para>Class representing the User API callback information.</para>
     /// <para>See: http://gamejolt.com/api/doc/game/users/fetch/ for further information.</para>
     /// <para>@author Christian "HyperGod" Bosence</para>

@@ -9,3 +9,9 @@ D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.g.resou
 D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.dll
 D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.pdb
 D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\XapCacheFile.xml
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\GameJoltAPISilverlight.dll
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\Newtonsoft.Json.dll
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\GameJoltAPISilverlight.pdb
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\Newtonsoft.Json.pdb
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\Bin\Release\Newtonsoft.Json.xml
+D:\Development\dot Net\GameJolt-C--API\SilverJolt\obj\Release\SilverJolt.csprojResolveAssemblyReference.cache

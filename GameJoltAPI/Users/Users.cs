@@ -7,6 +7,7 @@ using GameJoltAPI.Helpers;
 namespace GameJoltAPI.Users
 {
     /// <summary>
+    /// <para>DEPRICATED. Use GameJoltAPI.Users.User instead.</para>
     /// <para>This is a user implementation that is used to authenticate and fetch user information.</para>
     /// <para>See: http://gamejolt.com/api/doc/game/users/ for further information.</para>
     /// <para>@author Sam "runewake2" Wronski</para>
@@ -39,7 +40,7 @@ namespace GameJoltAPI.Users
 
         public static User FetchUser(string? username = null, string? user_id = null)
         {
-            string request = _authURL + "?game_id=" + Config.game_id + "&signature=" + Config.signature;
+            string request = _fetchURL + "?game_id=" + Config.game_id + "&signature=" + Config.signature;
 
             if (username == null && user_id == null)
                 username = Config.username;

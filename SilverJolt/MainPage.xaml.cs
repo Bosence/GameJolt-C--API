@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Threading;
+using GameJoltAPI;
 
 namespace SilverJolt
 {
@@ -18,6 +18,7 @@ namespace SilverJolt
         public MainPage()
         {
             InitializeComponent();
+            Config.game_id = 8763;
             PlaceRectangles();
         }
 
@@ -44,12 +45,22 @@ namespace SilverJolt
 
         private void UserInputLostFocusEvent(object sender, RoutedEventArgs e)
         {
-            SetState("Attempting to Authenticate [" + userInput.Text + " : " + tokenInput.Text + "]");
+            Config.username = userInput.Text;
         }
 
         private void TokenInputFocusEvent(object sender, RoutedEventArgs e)
         {
-            SetState("Attempting to Authenticate [" + userInput.Text + " : " + tokenInput.Text + "]");
+            Config.user_token = tokenInput.Text;
+            SetState("Attempting to Authenticate");
+            try
+            {
+                if (GameJoltAPI.Users.User.AuthenticateUser())
+                {
+                    SetState("Authenticated " + Config.username);
+                }
+                else SetState("Failed to authenticate " + Config.username + ". Please confirm your identity and try again.");
+            }
+            catch (GameJoltAPI.Exceptions.APIFailReturned fail) { SetState("Internal Error"); }
         }
     }
 }
