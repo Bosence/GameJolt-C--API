@@ -1,4 +1,4 @@
-# GameJolt C# API
+## GameJolt C# API
 A wrapper for the GameJolt API service. Written, so you don't have to.
 
 ## Features
