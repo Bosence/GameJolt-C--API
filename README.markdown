@@ -1,10 +1,11 @@
 ## GameJolt C# API
-A wrapper for the GameJolt API service. Written, so you don't have to.
+A wrapper for the GameJolt API service. Written, so *you* don't have to.
 
 ## Features
-* lots
-* of
-* things
-* *hopefully*
+* Lightweight and self inclusive; no nasty dependencies
+* Powerful; it does what it needs to, the way it should
+* Extendable; use our netcode or json decoders if you need to
+* Straightforward; hopefully it's documentated well enough you shouldn't need to ask
 
-There are some additional functions that are exposed, required to operate with the API. This will be properly written once the wrapper is in a usable state.
+## Help
+If you have issues with setting up something, we're available for help! Contact us [](here) and [](here).
