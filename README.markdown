@@ -1,5 +1,10 @@
 ## GameJolt C# API
-A wrapper for the GameJolt API service. Written, so *you* don't have to.
+A wrapper for the GameJolt API service for .NET programs in C#.
+
+## Requirements
+* .NET 3.5 
+
+*If you wish to build the source, we used VS10 for reference*
 
 ## Features
 * Lightweight and self inclusive; no nasty dependencies
